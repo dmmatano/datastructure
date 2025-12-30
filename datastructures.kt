@@ -7,9 +7,12 @@
 
 fun main() {
     /************************ 1- Array *****************************
-    * 1 tipo de dado, tamanho fixo
+    * Elementos do mesmo tipo de dado, tamanho fixo
+    * Usar quando: acesso rápido por índice; sabe o tamanho; dados simples e estáveis
+    * Evitar: precisa add ou remover muito frequentemente
     * .plus() ou outras operações similares criam um novo array
     */
+    val numbersArray = intArrayOf(1,2,3,4,5)
     val namesArray: Array<String> = arrayOf("David","John", "Stephano","Dona Jonathan", "Senhora Jeffersa")
     namesArray.first()
     namesArray.last()
