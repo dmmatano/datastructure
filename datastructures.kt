@@ -20,14 +20,60 @@ fun main() {
   
     /************************ 2- List *****************************
     * uma coleção ordenada de elementos
-    *
+    * 
     */
   
     /************************ 3- Linked List *****************************
     * consiste em pares de "valor" e "posição" da próximo "par"
-    *
+    * Usar quando: muitas inserções e remoções no meio da estrutura; tamanho muda muito
+    * Evitar: quando precisa d emuitas buscas
     */
-  
+    class Node<T>(
+        var value: T,
+        var next: Node<T>? = null
+    )
+    class LinkedList<T> {
+        private var head: Node<T>? = null
+
+        // Inserir no final
+        fun add(value: T) {
+            val newNode = Node(value)
+
+            if (head == null) {
+                head = newNode
+                return
+            }
+
+            var current = head
+            while (current?.next != null) {
+                current = current.next
+            }
+
+            current?.next = newNode
+        }
+
+        // Inserir no início
+        fun addFirst(value: T) {
+            val newNode = Node(value, head)
+            head = newNode
+        }
+    
+        // Remover o primeiro elemento
+        fun removeFirst() {
+            head = head?.next
+        }
+    
+        // Buscar um valor
+        fun contains(value: T): Boolean {
+            var current = head
+            while (current != null) {
+                if (current.value == value) return true
+                current = current.next
+            }
+            return false
+        }
+    }
+
     /************************ 4- Map *****************************
     * consiste em pares de "valor" e "posição" da próximo "par"
     *
