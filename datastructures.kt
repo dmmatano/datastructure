@@ -82,6 +82,8 @@ fun main() {
     * Usar: Busca rápida por chave, verificar existência de elemento, mapear dados, contadores, cache, indices, dicionários
     * Evitar: Precisa de ordem, Precisa percorrer dados ordenados, Precisa do menor / maior elemento, Precisa de range queries, 
     * Quer previsibilidade absoluta de performance (sistemas hard real-time)
+    * Diminuindo colisões: ter baixo fator de carga; boa função hash (valores estão dispersos na tabela, e não amontoados em um unico indice.
+    * Fator de carga = qtd items / qtd tot espaços
     */
   
     val map = HashMap<String, Int>()
