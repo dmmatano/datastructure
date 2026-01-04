@@ -2,7 +2,7 @@
 * 1- Array
 * 2- List
 * 3- Linked List
-* 4- Map 
+* 4- Hash Table 
 */
 
 fun main() {
@@ -74,16 +74,23 @@ fun main() {
         }
     }
 
-    /************************ 4- Map *****************************
-    * consiste em pares de "valor" e "posição" da próximo "par"
-    *
+    /************************ 4- Hash Table *****************************
+    * Uma tabela hash é uma estrutura de dados que armazena pares chave → valor e permite acesso extremamente rápido.
+    * Você passa uma chave, essa chave passa por uma função hash que gera um índice, o valor é armazenado ou recuperado diretamente nesse índice
+    * Complexidade: para inserções, pesquisa e etc normalmente é  O(1), mas se houverem muitas colisões (raro se usar tabelas do Kotlin) é O(n).
+    * Complexidade de espaço é O(n)
+    * Usar: Busca rápida por chave, verificar existência de elemento, mapear dados, contadores, cache, indices, dicionários
+    * Evitar: Precisa de ordem, Precisa percorrer dados ordenados, Precisa do menor / maior elemento, Precisa de range queries, 
+    * Quer previsibilidade absoluta de performance (sistemas hard real-time)
     */
   
-    val mapExample = mapOf(
-      "221" to "Aligator",
-      "245" to "Dog",
-      "266" to "Dino"
-    )
+    val map = HashMap<String, Int>()
+    
+    map["banana"] = 3
+    map["maçã"] = 5
+    
+    println(map["banana"]) // 3
+
     
     /************************ 5 - Set *****************************
     * garante que não tenha valores dupplicados
