@@ -108,8 +108,32 @@ fun main() {
     * Push - inclui
     * Pop - retira
     * Peek/Top - retorna valor do topo sem retirar
+    * Usar: navegação, undo/redo
+    * Evitar: se precisa de ordenação, acessar elementos no meio
     */
-  
+
+    class Stack<T> {
+        private val elements = mutableListOf<T>()
+    
+        fun push(item: T) {
+            elements.add(item)
+        }
+    
+        fun pop(): T? {
+            if (elements.isEmpty()) return null
+            return elements.removeAt(elements.size - 1)
+        }
+    
+        fun peek(): T? {
+            return elements.lastOrNull()
+        }
+    
+        fun isEmpty(): Boolean {
+            return elements.isEmpty()
+        }
+    }
+
+    
     /************************ 7 - Queue *****************************
     * FIFO
     * Front - valor da extrema direita
